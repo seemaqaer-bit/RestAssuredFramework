@@ -1,14 +1,12 @@
 package com.api.test;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import com.api.base.AuthService;
+import com.api.models.request.LoginRequest;
+import com.api.models.response.LoginResponse;
 
-import static io.restassured.RestAssured.*;
 import io.restassured.response.Response;
-
-
-
 
 
 public class LoginApiTest {
@@ -24,11 +22,22 @@ public class LoginApiTest {
 //				+ "{username: \"seemaqaer@gmail.com\", password: \"Seema@1986\"}")
 //				.post("/api/auth/login");
 //		System.out.println(response.asPrettyString());
-//		
-		AuthService authService = new AuthService();
-		Response response =authService.login("{username: \"uday1234\", password: \"uday1234\"}");
-		System.out.println(response.asPrettyString());
 		
+		LoginRequest loginRequest = new LoginRequest("seemaqaer@gmail.com", "Seema@1986");
+		AuthService authService = new AuthService();
+		Response response =authService.login(loginRequest);
+		LoginResponse loginResponse =response.as(LoginResponse.class);
+		
+		System.out.println(response.asPrettyString());
+		System.out.println(loginResponse.getToken());
+		System.out.println(loginResponse.getId());
+		System.out.println(loginResponse.getUsername());
+		System.out.println(loginResponse.getEmail());
+		
+		Assert.assertTrue(loginResponse.getToken() != null);
+		Assert.assertEquals(loginResponse.getId(), 6007);
+		Assert.assertEquals(loginResponse.getUsername(), "seemaqaer@gmail.com");
+		Assert.assertEquals(loginResponse.getEmail(), "seemaqaer@gmail.com");
 		
 	}
 }
