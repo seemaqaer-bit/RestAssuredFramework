@@ -16,17 +16,12 @@ public class GetProfileRequestTest {
 	public void getProfileInfoTest()
 	{
 		AuthService authService = new AuthService();
-
-	    Response response = authService.login(
-	        new LoginRequest("seemaqaer@gmail.com", "YOUR_PASSWORD")
-	    );
-
-	    System.out.println("Status: " + response.getStatusCode());
-	    System.out.println("Body: " + response.asString());
-
-	    LoginResponse loginRespose = response.as(LoginResponse.class);
-
-	    System.out.println(loginRespose.getToken());
+		Response response =authService.login(new LoginRequest("seemaqaer@gmail.com", "Seema@1986"));
+		
+		LoginResponse loginRespose =response.as(LoginResponse.class);
+		
+			System.out.println(loginRespose.getToken());
+		
 		
 		
 		
