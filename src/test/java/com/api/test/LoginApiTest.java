@@ -1,6 +1,7 @@
 package com.api.test;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.api.base.AuthService;
 import com.api.models.request.LoginRequest;
@@ -8,7 +9,7 @@ import com.api.models.response.LoginResponse;
 
 import io.restassured.response.Response;
 
-
+@Listeners(com.api.listeners.TestListener.class)
 public class LoginApiTest {
 
 	@Test(description ="Verify login test")

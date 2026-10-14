@@ -29,7 +29,8 @@ public class GetProfileRequestTest {
 		
 		response =  userProfileManagementService.getProfile(loginRespose.getToken());
 		UserProfileResponse userProfileResponse =response.as(UserProfileResponse.class);
-		//System.out.println(userProfileResponse.getUsername());
+		System.out.println(userProfileResponse.getUsername()); 
+		
 	}
 
 }
