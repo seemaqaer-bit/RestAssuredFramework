@@ -74,11 +74,7 @@
                 <scope>compile</scope>
             </dependency>
             
-        <dependency>
-        	<groupId>com.OrangeHrm</groupId>
-        	<artifactId>OrangeHRMProject</artifactId>
-        	<version>0.0.1-SNAPSHOT</version>
-        </dependency>
+        
   </dependencies>
 
   <build>
