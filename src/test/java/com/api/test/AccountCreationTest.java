@@ -1,5 +1,7 @@
 package com.api.test;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -24,6 +26,6 @@ public class AccountCreationTest {
 		AuthService authService = new AuthService();
 		Response response =authService.signup(signUpRequest);
 		System.out.println(response.asPrettyString());
-		Assert.assertEquals(response.statusCode(),200);
+		AssertJUnit.assertEquals(response.statusCode(),200);
 	}
 }

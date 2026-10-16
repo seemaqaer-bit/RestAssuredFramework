@@ -1,5 +1,7 @@
 package com.api.test;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -35,10 +37,10 @@ public class LoginApiTest {
 		System.out.println(loginResponse.getUsername());
 		System.out.println(loginResponse.getEmail());
 		
-		Assert.assertTrue(loginResponse.getToken() != null);
-		Assert.assertEquals(loginResponse.getId(), 6007);
-		Assert.assertEquals(loginResponse.getUsername(), "seemaqaer@gmail.com");
-		Assert.assertEquals(loginResponse.getEmail(), "seemaqaer@gmail.com");
+		AssertJUnit.assertTrue(loginResponse.getToken() != null);
+		AssertJUnit.assertEquals(loginResponse.getId(), 6007);
+		AssertJUnit.assertEquals(loginResponse.getUsername(), "seemaqaer@gmail.com");
+		AssertJUnit.assertEquals(loginResponse.getEmail(), "seemaqaer@gmail.com");
 		
 	}
 }

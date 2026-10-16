@@ -8,6 +8,16 @@
           <include name="loginTest"/>
         </methods>
       </class> <!-- com.api.test.LoginApiTest -->
+      <class name="com.api.test.AccountCreationTest">
+        <methods>
+          <include name="createAccountTest"/>
+        </methods>
+      </class> <!-- com.api.test.AccountCreationTest -->
+      <class name="com.api.test.GetProfileRequestTest">
+        <methods>
+          <include name="getProfileInfoTest"/>
+        </methods>
+      </class> <!-- com.api.test.GetProfileRequestTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
